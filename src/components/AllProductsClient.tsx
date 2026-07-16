@@ -16,8 +16,6 @@ export default function AllProductsClient({
   const [colors, setColors] = useState<string[]>([]);
 
   const filteredProducts = useMemo(() => {
-    console.log("Products:", products);
-    console.log("First product images:", products[0]?.images);
     return products.filter((p) => {
       // Extract variants data
       const variants = p.variants || [];

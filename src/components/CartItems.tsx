@@ -155,8 +155,6 @@ export default function CartItems() {
     }, 0);
   }, [products, quantities]);
 
-  console.log("products:", products);
-
   return (
     <Wrapper>
       <section className="px-2 my-28 lg:my-32">
