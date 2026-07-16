@@ -1,6 +1,6 @@
-# Mahila — E-Commerce Website with Next.js & MongoDB
+# Desi Drapes — E-Commerce Website with Next.js & MongoDB
 
-Mahila is an e-commerce platform built with Next.js and MongoDB for data storage. Users can browse products and add items to cart. (Stripe payments have been removed; the cart flow ends at the checkout step.)
+Desi Drapes is an e-commerce platform built with Next.js and MongoDB for data storage. Users can browse products and add items to cart. (Stripe payments have been removed; the cart flow ends at the checkout step.)
 
 ## 🚀 Features
 
@@ -21,7 +21,7 @@ Mahila is an e-commerce platform built with Next.js and MongoDB for data storage
 1. **Clone the repository**
    ```bash
    git clone <your-repo-url>
-   cd mahila
+   cd desi-drapes
    ```
 
 2. **Install dependencies**

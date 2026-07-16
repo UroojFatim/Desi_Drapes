@@ -39,8 +39,8 @@ export default async function Promotions() {
                   GET 30% Off
                 </h1>
                 <div className="text-md">USE PROMO CODE</div>
-                <button className="tracking-[0.35em] font-bold py-[6px] px-8 mt-1 rounded-lg border-spacing-0 bg-[#474747]">
-                  MAHILA30SALE
+                <button className="tracking-[0.35em] font-bold py-[6px] px-8 mt-1 rounded-lg border-spacing-0 bg-brand-navy">
+                  DESIDRAPES30
                 </button>
               </div>
             </div>

@@ -1,6 +1,5 @@
 "use client";
 
-import logo from "/public/MustLogo.png";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -247,12 +246,10 @@ const Header = () => {
                   Browse our collections and styles
                 </SheetDescription>
                 <div className="flex items-center gap-2 mt-2">
-                  <Image
-                    src={logo}
-                    alt="Mahila"
-                    className="h-12 w-auto object-contain"
-                    priority
-                  />
+                  <span className="text-2xl font-extrabold tracking-wide font-PT_Serif">
+                    <span className="text-brand-navy">Desi</span>{" "}
+                    <span className="text-black">Drapes</span>
+                  </span>
                 </div>
 
                 <nav className="mt-8 space-y-6">
@@ -310,12 +307,10 @@ const Header = () => {
             </Sheet>
 
             <Link href="/" className="flex items-center">
-              <Image
-                src={logo}
-                alt="MUST"
-                className="h-14 w-auto object-contain"
-                priority
-              />
+              <span className="text-3xl lg:text-4xl font-extrabold tracking-wide font-PT_Serif leading-none">
+                <span className="text-brand-navy">Desi</span>{" "}
+                <span className="text-black">Drapes</span>
+              </span>
             </Link>
           </div>
 

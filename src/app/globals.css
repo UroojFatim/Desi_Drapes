@@ -1,3 +1,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Desi Drapes theme tokens — green / black / white */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 7%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 7%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 7%;
+
+    --primary: 154 72% 21%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 150 30% 95%;
+    --secondary-foreground: 154 45% 14%;
+
+    --muted: 150 15% 95%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 150 30% 93%;
+    --accent-foreground: 154 72% 21%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 150 15% 88%;
+    --input: 150 15% 88%;
+    --ring: 154 72% 21%;
+  }
+}

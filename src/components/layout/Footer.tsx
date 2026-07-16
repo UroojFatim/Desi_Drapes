@@ -1,6 +1,4 @@
-import logo from "/public/MustLogo.png";
 import React from "react";
-import Image from "next/image";
 import { Instagram, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -11,7 +9,10 @@ const Footer = () => {
       <div className="mx-auto mb-8 md:mb-14 flex flex-col lg:flex-row max-w-screen-2xl gap-8 lg:gap-16 px-6 md:px-10 lg:px-12">
         {/* Left Section - Logo & Description */}
         <div className="w-full lg:basis-1/2 space-y-6 sm:space-y-8">
-          <Image className="h-12 w-20" src={logo} alt="logo" />
+          <span className="text-2xl font-extrabold tracking-wide font-PT_Serif">
+            <span className="text-brand-navy">Desi</span>{" "}
+            <span className="text-black">Drapes</span>
+          </span>
           <p className="text-paragraph text-sm sm:text-base lg:text-lg leading-relaxed">
             Timeless grace. Crafted for every moment.
           </p>
@@ -24,7 +25,7 @@ const Footer = () => {
               Follow us on:
             </h3>
             <Link
-              href={"https://www.instagram.com/mahila_studio/"}
+              href={"https://www.instagram.com/desidrapes_studio/"}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -36,10 +37,10 @@ const Footer = () => {
               Contact us on:
             </h3>
             <Link
-              href={"mailto:studio@mahila.com"}
+              href={"mailto:studio@desidrapes.com"}
               className="flex items-center gap-2 hover:opacity-70 transition-opacity"
             >
-              <span className="text-sm sm:text-base lg:text-lg">studio@mahila.com</span>
+              <span className="text-sm sm:text-base lg:text-lg">studio@desidrapes.com</span>
             </Link>
           </div>
         </div>
@@ -50,7 +51,7 @@ const Footer = () => {
       {/* Bottom */}
       <div className="mx-auto flex max-w-screen-2xl flex-col gap-3 px-6 md:px-10 py-4 text-[#666] sm:flex-row sm:items-center sm:justify-between sm:py-5 lg:px-8">
         <div className="text-xs sm:text-sm md:text-base">
-          Copyright © 2026 Mahila. All Rights Reserved.
+          Copyright © 2026 Desi Drapes. All Rights Reserved.
         </div>
         {/* <div className="text-xs sm:text-sm md:text-base">
           Design by. <b className="text-black">xyz Design Studio</b>

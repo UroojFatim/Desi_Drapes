@@ -9,7 +9,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "mahila.com",
+        hostname: "desidrapes.com",
         pathname: "/api/inventory/images/**",
       },
     ],

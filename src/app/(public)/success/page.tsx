@@ -44,9 +44,9 @@ const SuccessPage = () => {
         <p className="font-medium">Check your email inbox for the receipt</p>
         <p className="font-medium mt-2 ">
           If you have any questions, please email 
-          <button className="text-red-600 ml-1">
-            <a href="mailto:mahila@gmail.com">
-              mahila@gmail.com
+          <button className="text-brand-navy ml-1">
+            <a href="mailto:studio@desidrapes.com">
+              studio@desidrapes.com
             </a>
           </button>
         </p>

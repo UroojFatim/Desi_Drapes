@@ -31,15 +31,14 @@ module.exports = {
         paragraph: "#212121",
         grey: "#666",
 
-        // MUST Brand Theme
+        // Desi Drapes Brand Theme — festive green, black & white
         brand: {
-          navy: "#CC2F2F",   // dark blue#41667d
-          sky: "#861010",    // persian red main
-          sky_dark: "#850F0F", // darker persian red
-          black: "#CB2F2E",
+          navy: "#0F5C3B",     // primary green (main CTA / accent color)
+          sky: "#0B6E4F",      // secondary green
+          sky_dark: "#073B27", // deep green, near-black (hovers, dark accents)
+          black: "#111111",
           white: "#FFFFFF",
-          sky_light: "#F3FAFF",
-          
+          sky_light: "#EEF6F1", // pale green-tinted white for light backgrounds
         },
 
         // shadcn/ui token colors (keep as-is)

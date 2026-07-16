@@ -1,7 +1,7 @@
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mahila.com";
-export const BRAND_NAME = "Mahila";
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://desidrapes.com";
+export const BRAND_NAME = "Desi Drapes";
 export const DEFAULT_DESCRIPTION =
-  "Mahila is a luxury clothing brand offering curated collections with refined craftsmanship and modern elegance.";
+  "Desi Drapes is a luxury clothing brand offering curated collections with refined craftsmanship and modern elegance.";
 export const DEFAULT_OG_IMAGE = "/hero/luxurycollectiondesktop.jpg";
 
 export const toAbsoluteUrl = (pathOrUrl: string) => {

@@ -60,7 +60,7 @@ function generateSku(
   size: string
 ) {
   const parts = [
-    "MAHILA",
+    "DESI",
     abbreviate(category),
     abbreviate(fabric),
     abbreviate(style),

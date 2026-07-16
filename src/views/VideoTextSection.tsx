@@ -38,7 +38,7 @@ export default function VideoTextSection() {
               animate ? "translate-x-0 opacity-100" : "translate-x-20 opacity-0"
             } transition-all duration-1000 ease-in-out`}
           >
-            <span className="text-xs sm:text-sm font-semibold text-rose-900">Curated Picks</span>
+            <span className="text-xs sm:text-sm font-semibold text-brand-navy">Curated Picks</span>
             <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 leading-tight">
               Handpicked for You
             </h3>
@@ -76,7 +76,7 @@ export default function VideoTextSection() {
               animate ? "translate-x-0 opacity-100" : "-translate-x-20 opacity-0"
             } transition-all duration-1000 ease-in-out`}
           >
-            <span className="text-xs sm:text-sm font-semibold text-rose-600">Look Of The Week</span>
+            <span className="text-xs sm:text-sm font-semibold text-brand-navy">Look Of The Week</span>
             <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 leading-tight">
               Satrangi Pohnchos
             </h3>

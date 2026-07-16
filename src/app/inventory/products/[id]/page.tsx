@@ -372,7 +372,7 @@ export default function InventoryProductDetailPage({
 
   const generateSKU = (fabricValue: string, styleValue: string, color: string, size: string): string => {
     const parts = [
-      "MAHILA",
+      "DESI",
       abbreviate(editData?.collection || ""),
       abbreviate(styleValue),
       abbreviate(color),
@@ -579,7 +579,7 @@ export default function InventoryProductDetailPage({
             <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"><\/script>
             <script>
               new QRCode(document.getElementById('barcode'), {
-                text: '${typeof window !== "undefined" ? window.location.origin : "https://mahila.com"}/product/${product.slug}',
+                text: '${typeof window !== "undefined" ? window.location.origin : "https://desidrapes.com"}/product/${product.slug}',
                 width: 90,
                 height: 90
               });
@@ -1115,7 +1115,7 @@ export default function InventoryProductDetailPage({
                                 size.barcode ? (
                                   <div className="group relative cursor-pointer">
                                     <QRCodeCanvas
-                                      value={`${typeof window !== "undefined" ? window.location.origin : "https://mahila.com"}/product/${product.slug}`}
+                                      value={`${typeof window !== "undefined" ? window.location.origin : "https://desidrapes.com"}/product/${product.slug}`}
                                       size={64}
                                       bgColor="#ffffff"
                                       fgColor="#000000"
