@@ -140,7 +140,7 @@ const VirtualTryOnModal = ({ open, onOpenChange, garmentUrl, productTitle }: Pro
                     !uploadFile && presetId === p.id ? "border-[#861010] ring-2 ring-[#861010]/30" : "border-gray-200 hover:border-gray-400"
                   }`}
                 >
-                  <img src={`/tryon-models/${p.id}`} alt={p.label} className="h-28 w-full object-cover" />
+                  <img src={`/tryon-models/${p.id}`} alt={p.label} className="h-28 w-full object-cover object-top" />
                 </button>
               ))}
             </div>
@@ -165,7 +165,7 @@ const VirtualTryOnModal = ({ open, onOpenChange, garmentUrl, productTitle }: Pro
           {/* Preview row: person | garment | result */}
           <div className="mt-5 grid grid-cols-3 gap-3">
             <figure className="text-center">
-              <img src={personPreview} alt="You" className="h-56 w-full rounded-lg object-cover bg-gray-50" />
+              <img src={personPreview} alt="You" className="h-56 w-full rounded-lg object-cover object-top bg-gray-50" />
               <figcaption className="mt-1 text-xs text-gray-500">{uploadFile ? "Your photo" : "Model"}</figcaption>
             </figure>
             <figure className="text-center">
@@ -180,7 +180,7 @@ const VirtualTryOnModal = ({ open, onOpenChange, garmentUrl, productTitle }: Pro
                     <span className="text-xs">{statusMsg || "Generating…"}</span>
                   </div>
                 ) : result ? (
-                  <img src={result} alt="Try-on result" className="h-full w-full object-cover" />
+                  <img src={result} alt="Try-on result" className="h-full w-full object-cover object-top" />
                 ) : (
                   <span className="text-xs text-gray-400 px-2 text-center">Your try-on result appears here</span>
                 )}
