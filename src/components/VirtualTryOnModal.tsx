@@ -6,13 +6,6 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { X, Upload, Sparkles, Download, Loader2 } from "lucide-react";
 import { toast } from "react-toastify";
 
-const PRESETS = [
-  { id: "model1.jpg", label: "Model 1" },
-  { id: "model2.jpg", label: "Model 2" },
-  { id: "model3.jpg", label: "Model 3" },
-  { id: "model4.jpg", label: "Model 4" },
-];
-
 type Props = {
   open: boolean;
   onOpenChange: (v: boolean) => void;
@@ -21,7 +14,6 @@ type Props = {
 };
 
 const VirtualTryOnModal = ({ open, onOpenChange, garmentUrl, productTitle }: Props) => {
-  const [presetId, setPresetId] = useState<string>(PRESETS[0].id);
   const [uploadFile, setUploadFile] = useState<File | null>(null);
   const [uploadPreview, setUploadPreview] = useState<string>("");
   const [loading, setLoading] = useState(false);
@@ -29,7 +21,7 @@ const VirtualTryOnModal = ({ open, onOpenChange, garmentUrl, productTitle }: Pro
   const [result, setResult] = useState<string>("");
   const fileRef = useRef<HTMLInputElement>(null);
 
-  const personPreview = uploadPreview || `/tryon-models/${presetId}`;
+  const personPreview = uploadPreview;
 
   const onPick = (e: React.ChangeEvent<HTMLInputElement>) => {
     const f = e.target.files?.[0];
@@ -54,14 +46,17 @@ const VirtualTryOnModal = ({ open, onOpenChange, garmentUrl, productTitle }: Pro
       toast.error("No product image available for try-on.");
       return;
     }
+    if (!uploadFile) {
+      toast.error("Please upload your photo first.");
+      return;
+    }
     setLoading(true);
     setResult("");
     setStatusMsg("Submitting…");
     try {
       const fd = new FormData();
       fd.append("garmentUrl", garmentUrl);
-      if (uploadFile) fd.append("personFile", uploadFile);
-      else fd.append("presetId", presetId);
+      fd.append("personFile", uploadFile);
 
       // 1) Submit the job (fast) — returns a job id.
       const res = await fetch("/api/tryon", { method: "POST", body: fd });
@@ -120,7 +115,7 @@ const VirtualTryOnModal = ({ open, onOpenChange, garmentUrl, productTitle }: Pro
                 <Sparkles className="h-5 w-5" /> AI Virtual Mirror
               </Dialog.Title>
               <Dialog.Description className="text-xs sm:text-sm text-gray-500 mt-1">
-                See {productTitle ? `"${productTitle}"` : "this outfit"} worn on a model — or upload your own photo.
+                Upload your photo to see {productTitle ? `"${productTitle}"` : "this outfit"} worn on you.
               </Dialog.Description>
             </div>
             <Dialog.Close className="rounded-full p-1 text-gray-500 hover:bg-gray-100" aria-label="Close">
@@ -128,24 +123,9 @@ const VirtualTryOnModal = ({ open, onOpenChange, garmentUrl, productTitle }: Pro
             </Dialog.Close>
           </div>
 
-          {/* Choose model */}
+          {/* Upload photo */}
           <div className="mt-4">
-            <h4 className="text-sm font-semibold text-gray-800">Choose a model</h4>
-            <div className="mt-2 grid grid-cols-4 gap-2">
-              {PRESETS.map((p) => (
-                <button
-                  key={p.id}
-                  onClick={() => { setPresetId(p.id); clearUpload(); setResult(""); }}
-                  className={`relative overflow-hidden rounded-lg border-2 transition ${
-                    !uploadFile && presetId === p.id ? "border-[#861010] ring-2 ring-[#861010]/30" : "border-gray-200 hover:border-gray-400"
-                  }`}
-                >
-                  <img src={`/tryon-models/${p.id}`} alt={p.label} className="h-28 w-full object-cover object-top" />
-                </button>
-              ))}
-            </div>
-
-            <div className="mt-3 flex items-center gap-3">
+            <div className="flex items-center gap-3">
               <button
                 onClick={() => fileRef.current?.click()}
                 className="inline-flex items-center gap-2 rounded-lg border-2 border-dashed border-gray-300 px-3 py-2 text-sm font-medium text-gray-700 hover:border-[#861010] hover:text-[#861010]"
@@ -165,22 +145,28 @@ const VirtualTryOnModal = ({ open, onOpenChange, garmentUrl, productTitle }: Pro
           {/* Preview row: person | garment | result */}
           <div className="mt-5 grid grid-cols-3 gap-3">
             <figure className="text-center">
-              <img src={personPreview} alt="You" className="h-56 w-full rounded-lg object-cover object-top bg-gray-50" />
-              <figcaption className="mt-1 text-xs text-gray-500">{uploadFile ? "Your photo" : "Model"}</figcaption>
+              <div className="relative h-72 w-full rounded-lg bg-gray-50 overflow-hidden flex items-center justify-center">
+                {personPreview ? (
+                  <img src={personPreview} alt="You" className="h-full w-full object-contain" />
+                ) : (
+                  <span className="text-xs text-gray-400 px-2 text-center">Upload your photo to preview</span>
+                )}
+              </div>
+              <figcaption className="mt-1 text-xs text-gray-500">Your photo</figcaption>
             </figure>
             <figure className="text-center">
-              <img src={garmentUrl} alt="Garment" className="h-56 w-full rounded-lg object-contain bg-gray-50" />
+              <img src={garmentUrl} alt="Garment" className="h-72 w-full rounded-lg object-contain bg-gray-50" />
               <figcaption className="mt-1 text-xs text-gray-500">Outfit</figcaption>
             </figure>
             <figure className="text-center">
-              <div className="relative h-56 w-full rounded-lg bg-gray-50 overflow-hidden flex items-center justify-center">
+              <div className="relative h-72 w-full rounded-lg bg-gray-50 overflow-hidden flex items-center justify-center">
                 {loading ? (
                   <div className="flex flex-col items-center gap-2 text-gray-500 px-2 text-center">
                     <Loader2 className="h-6 w-6 animate-spin" />
                     <span className="text-xs">{statusMsg || "Generating…"}</span>
                   </div>
                 ) : result ? (
-                  <img src={result} alt="Try-on result" className="h-full w-full object-cover object-top" />
+                  <img src={result} alt="Try-on result" className="h-full w-full object-contain" />
                 ) : (
                   <span className="text-xs text-gray-400 px-2 text-center">Your try-on result appears here</span>
                 )}
