@@ -62,11 +62,11 @@ const Footer = () => {
           <b className="text-black">
             {" "}
             <a
-              href="https://www.epic-sphere.com/"
+              href="https://jinnah.edu/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Epic Sphere
+              MAJU
             </a>
           </b>
         </div>
