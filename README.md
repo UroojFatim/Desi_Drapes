@@ -2,13 +2,35 @@
 
 Mahila is an e-commerce platform built with Next.js and MongoDB for data storage. Users can browse products and add items to cart. (Stripe payments have been removed; the cart flow ends at the checkout step.)
 
+This project also serves as our **Final Year Project (FYP)**. As part of the FYP, we fine-tuned the **IDM-VITON** model for virtual try-on and wired it into the store as a live API widget: the user uploads their picture (or picks a preset model), selects a product, and the widget generates a preview of that product worn on them.
+
+## 🪄 Virtual Try-On (FYP Feature)
+
+- **Model**: IDM-VITON, fine-tuned for this project
+- **Serving**: the fine-tuned model runs on a RunPod serverless GPU endpoint; the app submits a job (person image + garment image) and polls for the result
+- **UI flow**: upload your photo or choose a preset model → select a product → generate → view/download the try-on result
+
+## 📦 Inventory Dashboard (`/inventory`)
+
+The app is connected to a live MongoDB database, and `/inventory` is a password-protected admin dashboard built on top of it for running the store day to day:
+
+- **Dashboard overview**: total products, total SKUs, units on hand, low-stock alerts, total sales, total profit
+- **Product management**: add, edit, and delete products, sizes/variants, and pricing
+- **Image management**: upload and update product pictures directly from the dashboard
+- **Collections & styles**: manage product collections and styles shown on the storefront
+- **Barcode/QR labels**: generate and print scannable price labels per product
+- **Admin login**: session-based auth (signed cookie) gates access to the dashboard
+
 ## 🚀 Features
 
-- **No Authentication Required**: Session-based cart system using localStorage
+- **Live Database**: MongoDB-backed product, cart, and inventory data
+- **No Authentication Required (storefront)**: Session-based cart system using localStorage
 - **Automatic User Creation**: User accounts created during Stripe checkout
 - **Secure Payments**: Stripe integration with webhook support
 - **MongoDB Storage**: Cart items, users, and orders stored in MongoDB
 - **Responsive Design**: Built with Tailwind CSS
+- **AI Virtual Try-On**: Fine-tuned IDM-VITON model, served via a RunPod API widget (FYP feature)
+- **Inventory Dashboard**: `/inventory` admin panel to manage products, stock, and pictures (see below)
 
 ## 📋 Prerequisites
 
@@ -117,6 +139,7 @@ See [MIGRATION_GUIDE.md](./MIGRATION_GUIDE.md) for detailed migration notes.
 - **Payments**: Stripe
 - **Styling**: Tailwind CSS
 - **Language**: TypeScript
+- **AI Try-On**: Fine-tuned IDM-VITON served on RunPod serverless GPU
 
 ## 📚 Learn More
 
