@@ -233,7 +233,7 @@ export default function CartItems() {
                         <div className="flex flex-col gap-1">
                           <span className="text-xl font-bold">
                             {" "}
-                            ${price}
+                            Rs. {price}
                           </span>
                         </div>
 
@@ -311,7 +311,7 @@ export default function CartItems() {
               </div>
               <div className="text-base sm:text-lg">
                 Sub Total:{" "}
-                <span className="font-bold">${totalSubtotal}</span>
+                <span className="font-bold">Rs. {totalSubtotal}</span>
               </div>
 
               <Button

@@ -573,7 +573,7 @@ export default function InventoryProductDetailPage({
                     </div>
                   </div>
                 </div>
-                <div class="price">$${finalPrice}</div>
+                <div class="price">Rs. ${finalPrice}</div>
               </div>
             </div>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"><\/script>
@@ -855,7 +855,7 @@ export default function InventoryProductDetailPage({
                   }`}
                 />
               ) : (
-                <span className="text-slate-900">${Number(product.purchasePrice || 0).toFixed(2)}</span>
+                <span className="text-slate-900">Rs. {Number(product.purchasePrice || 0).toFixed(2)}</span>
               )}
             </div>
             <div>
@@ -875,7 +875,7 @@ export default function InventoryProductDetailPage({
                   }`}
                 />
               ) : (
-                <span className="text-slate-900">${Number(product.basePrice || 0).toFixed(2)}</span>
+                <span className="text-slate-900">Rs. {Number(product.basePrice || 0).toFixed(2)}</span>
               )}
             </div>
           </div>

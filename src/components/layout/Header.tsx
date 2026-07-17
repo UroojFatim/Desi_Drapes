@@ -192,7 +192,7 @@ const Header = () => {
                       {product.title}
                     </p>
                     <p className="text-xs text-gray-500">
-                      ${Number(product.basePrice || 0)}
+                      Rs. {Number(product.basePrice || 0)}
                     </p>
                   </div>
                 </Link>
@@ -381,7 +381,7 @@ const Header = () => {
                               {product.title}
                             </p>
                             <p className="text-xs text-gray-500">
-                              ${Number(product.basePrice || 0)}
+                              Rs. {Number(product.basePrice || 0)}
                             </p>
                           </div>
                         </Link>

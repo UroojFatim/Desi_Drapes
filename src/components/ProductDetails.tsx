@@ -499,7 +499,7 @@ const ProductDetails = ({ foundData }: { foundData: any }) => {
               <ToastContainer />
 
               <div className="font-bold text-xl sm:text-2xl lg:text-3xl">
-                ${finalPrice}
+                Rs. {finalPrice}
               </div>
             </div>
 

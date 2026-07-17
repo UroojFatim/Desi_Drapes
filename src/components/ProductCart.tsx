@@ -139,7 +139,7 @@ const ProductCard: FC<{
             {item?.title}
           </h3>
           <p className="font-bold text-gray-900 whitespace-nowrap">
-            ${item?.basePrice}
+            Rs. {item?.basePrice}
           </p>
         </div>
 

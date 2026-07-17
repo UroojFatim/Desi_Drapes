@@ -51,9 +51,9 @@ export default function FiltersTopBar({
 
   const sizeLabel = sizes.length === 0 ? "Sizes: All" : `Sizes: ${sizes.length} selected`;
   const colorLabel = colors.length === 0 ? "Colors: All" : `Colors: ${colors.length} selected`;
-  const priceLabel = price[1] === null ? "Price: Any" : `Price: Up to $${price[1]}`;
+  const priceLabel = price[1] === null ? "Price: Any" : `Price: Up to Rs. ${price[1]}`;
   const activeChips = [
-    ...(price[1] !== null ? [`Up to $${price[1]}`] : []),
+    ...(price[1] !== null ? [`Up to Rs. ${price[1]}`] : []),
     ...sizes.map((size: string) => `Size ${size.toUpperCase()}`),
     ...colors.map((color: string) => `Color ${color.charAt(0).toUpperCase() + color.slice(1)}`),
   ];

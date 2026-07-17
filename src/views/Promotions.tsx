@@ -52,8 +52,8 @@ export default async function Promotions() {
                 Mehr-e-Zar
               </h3>
               <div className="flex gap-x-2">
-                <p className="line-through">$750.00</p>
-                <p className="font-bold">$500.00</p>
+                <p className="line-through">Rs. 750.00</p>
+                <p className="font-bold">Rs. 500.00</p>
               </div>
               <Image
                 height={500}
@@ -68,8 +68,8 @@ export default async function Promotions() {
                 Rose Veil
               </h3>
               <div className="flex gap-x-2">
-                <p className="line-through">$750.00</p>
-                <p className="font-bold">$500.00</p>
+                <p className="line-through">Rs. 750.00</p>
+                <p className="font-bold">Rs. 500.00</p>
               </div>
               <Image
                 height={500}

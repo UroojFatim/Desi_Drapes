@@ -196,7 +196,7 @@ export default function InventoryDashboardPage() {
                   <p className="text-xs md:text-sm text-slate-500">{card.label}</p>
                   <p className="text-xl md:text-2xl font-semibold text-slate-900 mt-1">
                     {card.key === "totalSales" || card.key === "totalProfit"
-                      ? `$${Number(stats[card.key] || 0).toFixed(2)}`
+                      ? `Rs. ${Number(stats[card.key] || 0).toFixed(2)}`
                       : typeof stats[card.key] === "number"
                         ? stats[card.key]
                         : 0}
