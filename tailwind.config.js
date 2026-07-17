@@ -31,7 +31,7 @@ module.exports = {
         paragraph: "#212121",
         grey: "#666",
 
-        // Desi Drapes Brand Theme — festive green, black & white
+        // Mahila Brand Theme — festive green, black & white
         brand: {
           navy: "#0F5C3B",     // primary green (main CTA / accent color)
           sky: "#0B6E4F",      // secondary green

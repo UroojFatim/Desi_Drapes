@@ -246,10 +246,11 @@ const Header = () => {
                   Browse our collections and styles
                 </SheetDescription>
                 <div className="flex items-center gap-2 mt-2">
-                  <span className="text-2xl font-extrabold tracking-wide font-PT_Serif">
-                    <span className="text-brand-navy">Desi</span>{" "}
-                    <span className="text-black">Drapes</span>
-                  </span>
+                  <img
+                    src="/MahilaLogo.png"
+                    alt="Mahila"
+                    className="h-28 w-auto object-contain"
+                  />
                 </div>
 
                 <nav className="mt-8 space-y-6">
@@ -307,10 +308,11 @@ const Header = () => {
             </Sheet>
 
             <Link href="/" className="flex items-center">
-              <span className="text-3xl lg:text-4xl font-extrabold tracking-wide font-PT_Serif leading-none">
-                <span className="text-brand-navy">Desi</span>{" "}
-                <span className="text-black">Drapes</span>
-              </span>
+              <img
+                src="/MahilaLogo.png"
+                alt="Mahila"
+                className="h-14 lg:h-16 w-auto object-contain"
+              />
             </Link>
           </div>
 

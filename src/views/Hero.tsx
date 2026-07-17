@@ -12,15 +12,15 @@ import mobileHero2 from "../../public/hero/hero_mobile_2.png";
 import mobileHero3 from "../../public/hero/hero_mobile_3.png";
 
 const desktopSlides = [
-  { src: desktopHero1, alt: "Desi Drapes collection slide 1" },
-  { src: desktopHero2, alt: "Desi Drapes collection slide 2" },
-  { src: desktopHero3, alt: "Desi Drapes collection slide 3" },
+  { src: desktopHero1, alt: "Mahila collection slide 1" },
+  { src: desktopHero2, alt: "Mahila collection slide 2" },
+  { src: desktopHero3, alt: "Mahila collection slide 3" },
 ];
 
 const mobileSlides = [
-  { src: mobileHero1, alt: "Desi Drapes collection slide 1" },
-  { src: mobileHero2, alt: "Desi Drapes collection slide 2" },
-  { src: mobileHero3, alt: "Desi Drapes collection slide 3" },
+  { src: mobileHero1, alt: "Mahila collection slide 1" },
+  { src: mobileHero2, alt: "Mahila collection slide 2" },
+  { src: mobileHero3, alt: "Mahila collection slide 3" },
 ];
 
 const Hero = () => {

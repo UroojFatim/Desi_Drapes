@@ -9,10 +9,11 @@ const Footer = () => {
       <div className="mx-auto mb-8 md:mb-14 flex flex-col lg:flex-row max-w-screen-2xl gap-8 lg:gap-16 px-6 md:px-10 lg:px-12">
         {/* Left Section - Logo & Description */}
         <div className="w-full lg:basis-1/2 space-y-6 sm:space-y-8">
-          <span className="text-2xl font-extrabold tracking-wide font-PT_Serif">
-            <span className="text-brand-navy">Desi</span>{" "}
-            <span className="text-black">Drapes</span>
-          </span>
+          <img
+            src="/MahilaLogo.png"
+            alt="Mahila"
+            className="h-14 w-auto object-contain"
+          />
           <p className="text-paragraph text-sm sm:text-base lg:text-lg leading-relaxed">
             Timeless grace. Crafted for every moment.
           </p>
@@ -25,7 +26,7 @@ const Footer = () => {
               Follow us on:
             </h3>
             <Link
-              href={"https://www.instagram.com/desidrapes_studio/"}
+              href={"https://www.instagram.com/mahila_studio/"}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -37,10 +38,10 @@ const Footer = () => {
               Contact us on:
             </h3>
             <Link
-              href={"mailto:studio@desidrapes.com"}
+              href={"mailto:studio@mahila.com"}
               className="flex items-center gap-2 hover:opacity-70 transition-opacity"
             >
-              <span className="text-sm sm:text-base lg:text-lg">studio@desidrapes.com</span>
+              <span className="text-sm sm:text-base lg:text-lg">studio@mahila.com</span>
             </Link>
           </div>
         </div>
@@ -51,7 +52,7 @@ const Footer = () => {
       {/* Bottom */}
       <div className="mx-auto flex max-w-screen-2xl flex-col gap-3 px-6 md:px-10 py-4 text-[#666] sm:flex-row sm:items-center sm:justify-between sm:py-5 lg:px-8">
         <div className="text-xs sm:text-sm md:text-base">
-          Copyright © 2026 Desi Drapes. All Rights Reserved.
+          Copyright © 2026 Mahila. All Rights Reserved.
         </div>
         {/* <div className="text-xs sm:text-sm md:text-base">
           Design by. <b className="text-black">xyz Design Studio</b>

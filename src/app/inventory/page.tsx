@@ -107,7 +107,7 @@ export default function InventoryDashboardPage() {
         <div className="w-full max-w-md rounded-2xl bg-white p-6 md:p-8 shadow-lg">
           <div className="mb-6">
             <h1 className="text-xl md:text-2xl font-semibold text-slate-900">
-              Desi Drapes Inventory
+              Mahila Inventory
             </h1>
             <p className="text-xs md:text-sm text-slate-500 mt-1">
               Sign in with your admin credentials to manage stock.
@@ -165,7 +165,7 @@ export default function InventoryDashboardPage() {
         {/* Header */}
         <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
           <div>
-            <h1 className="text-2xl md:text-3xl font-semibold">Desi Drapes Inventory</h1>
+            <h1 className="text-2xl md:text-3xl font-semibold">Mahila Inventory</h1>
             <p className="text-xs md:text-sm text-slate-500">
               Manage your clothing inventory
             </p>

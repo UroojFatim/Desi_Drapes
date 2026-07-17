@@ -40,7 +40,7 @@ export default async function Promotions() {
                 </h1>
                 <div className="text-md">USE PROMO CODE</div>
                 <button className="tracking-[0.35em] font-bold py-[6px] px-8 mt-1 rounded-lg border-spacing-0 bg-brand-navy">
-                  DESIDRAPES30
+                  MAHILA30
                 </button>
               </div>
             </div>
