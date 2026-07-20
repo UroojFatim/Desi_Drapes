@@ -3,7 +3,7 @@
 
 import React, { useRef, useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
-import { X, Upload, Sparkles, Download, Loader2 } from "lucide-react";
+import { X, Upload, Sparkles, Download, Loader2, Clock } from "lucide-react";
 import { toast } from "react-toastify";
 
 type Props = {
@@ -19,6 +19,7 @@ const VirtualTryOnModal = ({ open, onOpenChange, garmentUrl, productTitle }: Pro
   const [loading, setLoading] = useState(false);
   const [statusMsg, setStatusMsg] = useState<string>("");
   const [result, setResult] = useState<string>("");
+  const [serviceDownOpen, setServiceDownOpen] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
 
   const personPreview = uploadPreview;
@@ -97,7 +98,8 @@ const VirtualTryOnModal = ({ open, onOpenChange, garmentUrl, productTitle }: Pro
         );
       }
     } catch (err) {
-      toast.error(err instanceof Error ? err.message : "Try-on failed.");
+      console.error(err);
+      setServiceDownOpen(true);
     } finally {
       setLoading(false);
       setStatusMsg("");
@@ -112,7 +114,7 @@ const VirtualTryOnModal = ({ open, onOpenChange, garmentUrl, productTitle }: Pro
           <div className="flex items-start justify-between gap-4">
             <div>
               <Dialog.Title className="flex items-center gap-2 text-lg sm:text-xl font-bold text-[#861010]">
-                <Sparkles className="h-5 w-5" /> AI Virtual Mirror
+                 AI Virtual Mirror
               </Dialog.Title>
               <Dialog.Description className="text-xs sm:text-sm text-gray-500 mt-1">
                 Upload your photo to see {productTitle ? `"${productTitle}"` : "this outfit"} worn on you.
@@ -201,6 +203,32 @@ const VirtualTryOnModal = ({ open, onOpenChange, garmentUrl, productTitle }: Pro
           </p>
         </Dialog.Content>
       </Dialog.Portal>
+
+      {/* AI service unavailable notice */}
+      <Dialog.Root open={serviceDownOpen} onOpenChange={setServiceDownOpen}>
+        <Dialog.Portal>
+          <Dialog.Overlay className="fixed inset-0 z-[60] bg-black/50 data-[state=open]:animate-in data-[state=open]:fade-in-0" />
+          <Dialog.Content className="fixed left-1/2 top-1/2 z-[60] w-[90vw] max-w-sm -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-white p-6 shadow-xl focus:outline-none">
+            <div className="flex flex-col items-center text-center">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-amber-50">
+                <Clock className="h-6 w-6 text-amber-600" />
+              </div>
+              <Dialog.Title className="mt-4 text-base font-bold text-gray-900">
+                AI Virtual Mirror Temporarily Unavailable
+              </Dialog.Title>
+              <Dialog.Description className="mt-2 text-sm leading-relaxed text-gray-500">
+                Our AI try-on runs on compute that&apos;s billed by the hour, so it&apos;s only active during scheduled
+                windows to keep costs in check. It&apos;s offline right now — please check back a little later.
+              </Dialog.Description>
+              <Dialog.Close asChild>
+                <button className="mt-5 w-full rounded-lg bg-[#861010] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#6e0d0d]">
+                  Got it
+                </button>
+              </Dialog.Close>
+            </div>
+          </Dialog.Content>
+        </Dialog.Portal>
+      </Dialog.Root>
     </Dialog.Root>
   );
 };

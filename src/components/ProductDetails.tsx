@@ -492,8 +492,7 @@ const ProductDetails = ({ foundData }: { foundData: any }) => {
                 onClick={() => setTryOnOpen(true)}
                 className="bg-[#861010] text-white font-bold py-3 sm:py-4 px-4 sm:px-6 gap-x-2 text-xs sm:text-sm w-full sm:w-auto lg:max-w-xs border-2 border-solid shadow-md hover:bg-[#6e0d0d] transition"
               >
-                <Sparkles className="h-4 w-4 sm:h-5 sm:w-5" color="#ffffff" />
-                <div>Try On (AI Virtual Mirror)</div>
+                <div>Try It Now</div>
               </Button>
 
               <ToastContainer />
