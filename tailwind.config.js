@@ -2,10 +2,10 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/views/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     container: {
@@ -16,32 +16,83 @@ module.exports = {
       },
     },
     extend: {
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
+      animation: {
+        "spin-slow": "spin 3s linear infinite reverse",
+        bump: "bump .4s ease",
+        "fade-up": "fadeUp .6s ease",
+        "toast-in": "toastIn .25s ease",
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      keyframes: {
+        bump: {
+          "0%": { transform: "scale(1)" },
+          "40%": { transform: "scale(1.35)" },
+          "100%": { transform: "scale(1)" },
+        },
+        fadeUp: {
+          from: { opacity: "0", transform: "translateY(10px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
+        toastIn: {
+          from: { opacity: "0", transform: "translate(-50%, 12px)" },
+          to: { opacity: "1", transform: "translate(-50%, 0)" },
+        },
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+      },
       fontFamily: {
-        PT_Serif: ["PT Serif"],
+        sans: ["var(--font-jost)", "sans-serif"],
+        serif: ["var(--font-playfair)", "serif"],
+        script: ["var(--font-playball)", "cursive"],
       },
-      scale: {
-        "135": "1.35",
-        "200": "2.00",
-      },
-
-      // THEME COLORS ADDED HERE
       colors: {
-        // existing custom colors
+        // Mahila redesign palette (olive / cream / ink)
+        ink: "#1C1C1A",
+        cream: "#F7F3EC",
+        olive: {
+          DEFAULT: "#47523A",
+          dark: "#333c29",
+          light: "#7c8a63",
+        },
+        sage: "#c9d0b8",
+        hairline: "#ded7c6",
+        brick: "#9c3f34",
+        gold: "#B08D57",
+        tint: {
+          1: "#EFEAD9",
+          2: "#E3E6D5",
+          3: "#F3EDE4",
+          4: "#DCE0CB",
+          5: "#EAE3D2",
+          6: "#DEE3D0",
+        },
+
+        // legacy custom colors (kept so untouched components don't regress)
         pink: "#ffece3",
         paragraph: "#212121",
         grey: "#666",
-
-        // Mahila Brand Theme — festive green, black & white
         brand: {
-          navy: "#0F5C3B",     // primary green (main CTA / accent color)
-          sky: "#0B6E4F",      // secondary green
-          sky_dark: "#073B27", // deep green, near-black (hovers, dark accents)
+          navy: "#0F5C3B",
+          sky: "#0B6E4F",
+          sky_dark: "#073B27",
           black: "#111111",
           white: "#FFFFFF",
-          sky_light: "#EEF6F1", // pale green-tinted white for light backgrounds
+          sky_light: "#EEF6F1",
         },
 
-        // shadcn/ui token colors (keep as-is)
+        // shadcn/ui token colors — driven by the CSS vars in globals.css
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -75,25 +126,6 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-      },
-
-      borderRadius: {
-        // keep empty if you don’t want shadcn radius tokens
-      },
-
-      keyframes: {
-        "accordion-down": {
-          from: { height: 0 },
-          to: { height: "var(--radix-accordion-content-height)" },
-        },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: 0 },
-        },
-      },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
   },
